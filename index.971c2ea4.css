@@ -13,14 +13,17 @@ input, button, textarea {
 
 .header {
   box-sizing: border-box;
-  background-image: url("bg-image.28d769c5.png");
+  background-image: url("bg-image.5e0f0d04.webp");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   flex-direction: column;
   justify-content: space-between;
+  width: 100%;
   height: 100vh;
+  margin-right: calc(-100vw + 100%);
   display: flex;
+  overflow-x: hidden;
 }
 
 .header__top {
@@ -127,10 +130,12 @@ input, button, textarea {
   content: "+1 234 5555-55-55";
   color: #1b2129;
   font-size: inherit;
+  letter-spacing: 2px;
   opacity: 0;
   justify-content: end;
   align-items: center;
   width: max-content;
+  font-weight: 700;
   transition: opacity .7s;
   display: flex;
   position: absolute;
@@ -227,9 +232,15 @@ input, button, textarea {
 
 .nav__link {
   color: inherit;
+  scroll-behavior: smooth;
   font-size: 22px;
   line-height: 100%;
   text-decoration: none;
+  transition: color .7s;
+}
+
+.nav__link:hover {
+  color: #9393a3;
 }
 
 .nav__link--phone-number {
@@ -241,6 +252,7 @@ input, button, textarea {
 
 .nav__link--call {
   letter-spacing: 2px;
+  scroll-behavior: smooth;
   padding-bottom: 4px;
   font-size: 16px;
   line-height: 140%;
@@ -290,20 +302,7 @@ input, button, textarea {
 .card__image {
   border-radius: 4px;
   width: 100%;
-  height: 280px;
   transition: transform .4s;
-}
-
-@media (width >= 744px) {
-  .card__image {
-    height: 600px;
-  }
-}
-
-@media (width >= 1260px) {
-  .card__image {
-    height: 324px;
-  }
 }
 
 .card__image:hover {
@@ -364,6 +363,12 @@ input, button, textarea {
 
 @media (width >= 744px) {
   .category__one-photo {
+    min-height: 184px;
+  }
+}
+
+@media (width >= 1260px) {
+  .category__one-photo {
     min-height: 324px;
   }
 }
@@ -422,7 +427,7 @@ input, button, textarea {
 }
 
 .about__accent-image {
-  background-image: url("player.245a1993.png");
+  background-image: url("player.0e776b78.webp");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -522,11 +527,14 @@ input, button, textarea {
 
 .contacts__input-field {
   box-sizing: border-box;
+  resize: none;
   color: #1b2129;
   letter-spacing: .15px;
+  font-family: inherit;
   font-size: inherit;
   line-height: inherit;
   background-color: #f9f9f9;
+  border: 1px solid #0000;
   border-radius: 8px;
   padding: 14px 16px;
 }
@@ -550,7 +558,14 @@ input, button, textarea {
 .contacts__info {
   flex-direction: column;
   gap: 24px;
+  margin-top: 48px;
   display: flex;
+}
+
+@media (width >= 744px) {
+  .contacts__info {
+    margin-top: 80px;
+  }
 }
 
 .contacts__info-block {
@@ -569,6 +584,7 @@ input, button, textarea {
   color: #191919;
   letter-spacing: .15px;
   font-size: 16px;
+  text-decoration: none;
   transition: color .7s;
 }
 
@@ -590,7 +606,9 @@ input, button, textarea {
 }
 
 .page__body {
-  margin: 0;
+  max-width: 1600px;
+  margin: 0 auto;
+  overflow-x: hidden;
 }
 
 .page__menu {
